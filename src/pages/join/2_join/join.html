@@ -1,0 +1,76 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>가치가 회원가입</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col col-auto>
+				<ion-item>
+					<ion-label>* 필수</ion-label>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-item>
+				*
+				<ion-input type="text" placeholder="Id"></ion-input>
+			</ion-item>
+			<ion-item>
+				*
+				<ion-input type="text" placeholder="이름"></ion-input>
+			</ion-item>
+			<ion-item>
+				*
+				<ion-input type="password" placeholder="Password"></ion-input>
+			</ion-item>
+			<ion-item>
+				*
+				<ion-input type="password" placeholder="Password 확인"></ion-input>
+			</ion-item>
+		</ion-row>
+
+
+		<ion-row justify-content-center>
+			<ion-col col-auto>
+				<ion-item>
+					<ion-label>* 선택</ion-label>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-item>
+				<ion-input type="text" placeholder="소속(학과)"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input type="text" placeholder="전화번호"></ion-input>
+			</ion-item>
+		</ion-row>
+
+		<ion-row>
+			<ion-col>
+				<ion-list>
+					<ion-item>
+						<ion-label>성별</ion-label>
+						<ion-select [(ngModel)]="notifications"  interface="action-sheet">
+							<ion-option value="nes">남</ion-option>
+							<ion-option value="n64">여</ion-option>
+						</ion-select>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col col-5>
+				<button ion-button block color="danger" outline (click)="ResetLoginPage()">취소</button>
+			</ion-col>
+			<ion-col col-5>
+				<button ion-button block color="secondary" outline (click)="ResetMainPage()">회원가입</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>
