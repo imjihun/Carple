@@ -1,7 +1,12 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { HttpModule } from '@angular/http';
+import { Network } from '@ionic-native/network';
+
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+
 
 import { LoginPage } from '../pages/login/login';
 import { ProvisionPage } from '../pages/join/1_provision/provision';
@@ -13,6 +18,8 @@ import { ComeHomePage } from '../pages/main/comehome/comehome';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { ConnectivityProvider } from '../providers/connectivity/connectivity';
 
 @NgModule({
   declarations: [
@@ -28,6 +35,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+	HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -45,7 +53,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+	Network,
+    ConnectivityProvider
   ]
 })
 export class AppModule {}

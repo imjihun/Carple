@@ -8,12 +8,13 @@ import { JoinPage } from '../2_join/join';
 	templateUrl: 'provision.html'
 })
 export class ProvisionPage {
-  constructor(public navCtrl: NavController) {}
+	constructor(public navCtrl: NavController) { }
 
-  GoToJoinPage() {
-    this.navCtrl.push(JoinPage);
-  }
-  ResetLoginPage() {
-    this.navCtrl.setRoot(LoginPage);
-  }
+	GoToJoinPage() {
+		this.navCtrl.push(JoinPage);
+	}
+	ResetLoginPage() {
+		this.navCtrl.push(LoginPage);
+		this.navCtrl.setRoot(LoginPage);
+	}
 }

@@ -16,19 +16,19 @@
 		<ion-row>
 			<ion-item>
 				*
-				<ion-input type="text" placeholder="Id"></ion-input>
+				<ion-input type="text" placeholder="Id" [(ngModel)]="id"></ion-input>
 			</ion-item>
 			<ion-item>
 				*
-				<ion-input type="text" placeholder="이름"></ion-input>
+				<ion-input type="text" placeholder="이름" [(ngModel)]="name"></ion-input>
 			</ion-item>
 			<ion-item>
 				*
-				<ion-input type="password" placeholder="Password"></ion-input>
+				<ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
 			</ion-item>
 			<ion-item>
 				*
-				<ion-input type="password" placeholder="Password 확인"></ion-input>
+				<ion-input type="password" placeholder="Password 확인" [(ngModel)]="confirm_password"></ion-input>
 			</ion-item>
 		</ion-row>
 
@@ -42,10 +42,10 @@
 		</ion-row>
 		<ion-row>
 			<ion-item>
-				<ion-input type="text" placeholder="소속(학과)"></ion-input>
+				<ion-input type="text" placeholder="소속(학과)" [(ngModel)]="attach"></ion-input>
 			</ion-item>
 			<ion-item>
-				<ion-input type="text" placeholder="전화번호"></ion-input>
+				<ion-input type="text" placeholder="전화번호" [(ngModel)]="phone"></ion-input>
 			</ion-item>
 		</ion-row>
 
@@ -54,7 +54,7 @@
 				<ion-list>
 					<ion-item>
 						<ion-label>성별</ion-label>
-						<ion-select [(ngModel)]="notifications"  interface="action-sheet">
+						<ion-select [(ngModel)]="notifications"  interface="action-sheet" [(ngModel)]="sex">
 							<ion-option value="nes">남</ion-option>
 							<ion-option value="n64">여</ion-option>
 						</ion-select>
@@ -69,7 +69,7 @@
 				<button ion-button block color="danger" outline (click)="ResetLoginPage()">취소</button>
 			</ion-col>
 			<ion-col col-5>
-				<button ion-button block color="secondary" outline (click)="ResetMainPage()">회원가입</button>
+				<button ion-button block color="secondary" outline (click)="DoJoin()">회원가입</button>
 			</ion-col>
 		</ion-row>
 	</ion-grid>
