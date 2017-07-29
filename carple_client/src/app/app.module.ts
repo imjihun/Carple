@@ -13,8 +13,8 @@ import { ProvisionPage } from '../pages/join/1_provision/provision';
 import { JoinPage } from '../pages/join/2_join/join';
 
 import { MainPage } from '../pages/main/main';
-import { GoToSchoolPage } from '../pages/main/gotoschool/gotoschool';
-import { ComeHomePage } from '../pages/main/comehome/comehome';
+import { GetIn } from '../pages/main/getin/getin';
+import { PickUp } from '../pages/main/pickup/pickup';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,8 +30,8 @@ import { ConnectivityProvider } from '../providers/connectivity/connectivity';
 	ProvisionPage,
 
 	MainPage,
-	GoToSchoolPage,
-	ComeHomePage
+	GetIn,
+	PickUp
   ],
   imports: [
     BrowserModule,
@@ -47,8 +47,8 @@ import { ConnectivityProvider } from '../providers/connectivity/connectivity';
 	ProvisionPage,
 
 	MainPage,
-	GoToSchoolPage,
-	ComeHomePage
+	GetIn,
+	PickUp
   ],
   providers: [
     StatusBar,

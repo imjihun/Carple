@@ -1,0 +1,87 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>가치가</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col col-max>
+				<ion-item>
+      				<ion-label>탈 곳</ion-label>
+					<ion-select [(ngModel)]="my_pickup_info.src">
+    					<ion-option *ngFor="let obj of place" [value]="obj.value">{{obj.text}}</ion-option>
+					</ion-select>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row justify-content-center>
+			<ion-col col-max>
+				<ion-item>
+      				<ion-label>목적지</ion-label>
+					<ion-select [(ngModel)]="my_pickup_info.dst">
+    					<ion-option *ngFor="let obj of place" [value]="obj.value">{{obj.text}}</ion-option>
+					</ion-select>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row justify-content-center>
+			<ion-col col-max>
+				<ion-item>
+      				<ion-label>태울 시간</ion-label>
+					<ion-datetime displayFormat="M/DD h:mm A" pickerFormat="M DD h mm A" [(ngModel)]="my_pickup_info.time"></ion-datetime>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row justify-content-center>
+			<ion-col col-auto>
+				<button ion-button block color="secondary" outline (click)="__debug()">동의</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+
+	<ion-grid >
+		<ion-row justify-content-center>
+			<ion-col col-5 push-0>
+				<div>이름</div>
+			</ion-col>
+			<ion-col col-5 push-5>
+				<h2>목적지</h2>
+			</ion-col>
+		</ion-row>
+		<ion-row justify-content-center *ngFor="let my_recv_getin_request of my_recv_getin_requests">
+			<ion-col col-5>
+				<h2>{{my_recv_getin_request.dst}}</h2>
+			</ion-col>
+			<ion-col col-5>
+				<h2>{{my_recv_getin_request.dst}}</h2>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<!--<button ion-button block color="dark" outline [disabled]="my_recv_getin_request.disabled" *ngFor="let my_recv_getin_request of my_recv_getin_requests">
+	</button>-->
+
+	<!--<ion-card *ngFor="let my_recv_getin_request of my_recv_getin_requests">
+		<ion-grid>
+			<ion-row justify-content-center>
+				<ion-col col-auto>
+					<h2>{{my_recv_getin_request.name}}</h2>
+				</ion-col>
+				<ion-col col-auto>
+					<p>{{my_recv_getin_request.dst}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		<ion-item>
+			<ion-avatar item-start>
+				<img src="img/marty-avatar.png">
+			</ion-avatar>
+			<h2>{{my_recv_getin_request.name}}</h2>
+			<p>{{my_recv_getin_request.dst}}</p>
+		</ion-item>
+	</ion-card>-->
+	
+</ion-content>
