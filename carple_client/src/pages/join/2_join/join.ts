@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { MainPage } from '../../main/main';
-import { LoginPage } from '../../login/login';
+import { MainSidebar } from '../../main_sidebar/main_sidebar';
+// import { LoginPage } from '../../login/login';
+import { AlertController } from 'ionic-angular';
 
 import { ConnectivityProvider } from '../../../providers/connectivity/connectivity';
 
@@ -18,7 +19,7 @@ export class JoinPage {
 	phone:any;
 	sex:any;
 
-	constructor(public navCtrl: NavController, public conn: ConnectivityProvider) { }
+	constructor(public navCtrl: NavController, public conn: ConnectivityProvider, public alertCtrl: AlertController) { }
 
 	CheckJoin() :number
 	{
@@ -35,11 +36,26 @@ export class JoinPage {
 	{
 		if(this.CheckJoin() != 0)
 		{
-			alert("confirm info");
+			let alert = this.alertCtrl.create({
+				title: 'Join Fail',
+				message: '입력정보를 확인해주세요',
+				buttons: [
+					{
+						text: 'Ok',
+						handler: data => {
+							console.log('Ok clicked');
+						}
+					}
+				]
+			});
+			alert.present();
 			return;
 		}
 
+		this.ResetMainPage();
+		
 		this.conn.GetRemoteData(JSON.stringify({
+			type:"join",
 			id:this.id, 
 			password:this.password,
 			name:this.name,
@@ -52,18 +68,30 @@ export class JoinPage {
 				if(JSON.parse(retval).retval == 0)
 					this.ResetMainPage();
 				else
-					alert("join failed");
+				{
+					let alert = this.alertCtrl.create({
+						title: 'Join Fail',
+						message: '회원가입 실패',
+						buttons: [
+							{
+								text: 'Ok',
+								handler: data => {
+									console.log('Ok clicked');
+								}
+							}
+						]
+					});
+					alert.present();
+				}
 			}
 			, error =>{
 				console.log("error network");
 			});
 	}
 	ResetLoginPage() {
-		this.navCtrl.push(LoginPage);
-		this.navCtrl.setRoot(LoginPage);
+		this.navCtrl.popToRoot();
 	}
 	ResetMainPage() {
-		this.navCtrl.push(MainPage);
-		this.navCtrl.setRoot(MainPage);
+		this.navCtrl.setRoot(MainSidebar);
 	}
 }

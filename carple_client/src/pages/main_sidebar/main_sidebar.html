@@ -1,0 +1,23 @@
+<ion-menu [content]="content">
+	<ion-header>
+		<ion-toolbar>
+			<ion-title>Menuewqewqewq</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<ion-list>
+			게시판
+			<button menuClose ion-item *ngFor="let p of etc_pages" (click)="openPage(p)">
+        		{{p.title}}
+      		</button>
+		</ion-list>
+		<ion-list>
+			설정
+			<button menuClose ion-item *ngFor="let p of option_pages" (click)="openPage(p)">
+        		{{p.title}}
+      		</button>
+		</ion-list>
+	</ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage" swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,52 @@
+<ion-header>
+	<ion-navbar>
+	<button ion-button menuToggle icon-only>
+    	<ion-icon name='menu'></ion-icon>
+    </button>
+		<ion-title>가치가</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-grid>
+		<ion-row>
+			<ion-item>
+				<ion-label>대면 인증시</ion-label>
+				<!--<ion-thumbnail item-start>
+					<img src="img/thumbnail-totoro.png">
+				</ion-thumbnail>-->
+				<ion-avatar item-end>
+					<img src="img/avatar-cher.png">
+				</ion-avatar>
+			</ion-item>
+			<ion-item>
+				<ion-label>sss 회원 2명에게 인증시</ion-label>
+				<!--<ion-thumbnail item-start>
+					<img src="img/thumbnail-totoro.png">
+				</ion-thumbnail>-->
+				<ion-avatar item-end>
+					<img src="img/avatar-cher.png">
+				</ion-avatar>
+			</ion-item>
+			<ion-item>
+				<ion-label>선택정보 모두 입력시</ion-label>
+				<!--<ion-thumbnail item-start>
+					<img src="img/thumbnail-totoro.png">
+				</ion-thumbnail>-->
+				<ion-avatar item-end>
+					<img src="img/avatar-cher.png">
+				</ion-avatar>
+			</ion-item>
+		</ion-row>
+	</ion-grid>
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col col-5>
+				<button ion-button block color="dark" outline (click)="RequestCertification()">인증요청</button>
+			</ion-col>
+			<ion-col col-5>
+				<button ion-button block color="dark" outline (click)="ApproveCertification()">인증취소</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

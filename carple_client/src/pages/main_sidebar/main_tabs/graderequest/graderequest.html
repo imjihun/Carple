@@ -1,0 +1,53 @@
+<ion-header>
+	<ion-navbar>
+	<button ion-button menuToggle icon-only>
+    	<ion-icon name='menu'></ion-icon>
+    </button>
+		<ion-title>가치가</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<ion-grid>
+		<ion-row>
+			<ion-col>
+				<ion-item>
+					<ion-input type="text" placeholder="요청할 id" [(ngModel)]="id"></ion-input>
+				</ion-item>
+			</ion-col>
+			<ion-col col-5>
+				<button ion-button block color="dark" outline (click)="ClickRequest()">
+					요청
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col col-max>
+				<ion-item>
+					<div class=table_name>요청리스트</div>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row align-items-center>
+			<ion-col col-9>
+				<div class=table_title>ID</div>
+			</ion-col>
+			<ion-col col-3>
+				<div class=table_title>취소</div>
+			</ion-col>
+		</ion-row>
+		<ion-row *ngFor="let grade_request of grade_request_list" align-items-center>
+			<ion-col col-9>
+				<div class=table_data>{{grade_request.id}}</div>
+			</ion-col>
+			<ion-col col-3>
+				<button ion-button block class=button-pink color="dark" outline [disabled]="grade_request.disabled" (click)="ClickRequestCancel()">
+					취소
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { LoginPage } from '../../login/login';
+// import { LoginPage } from '../../login/login';
 import { JoinPage } from '../2_join/join';
 
 @Component({
@@ -14,7 +14,6 @@ export class ProvisionPage {
 		this.navCtrl.push(JoinPage);
 	}
 	ResetLoginPage() {
-		this.navCtrl.push(LoginPage);
-		this.navCtrl.setRoot(LoginPage);
+		this.navCtrl.popToRoot();
 	}
 }

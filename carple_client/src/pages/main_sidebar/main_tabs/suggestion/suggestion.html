@@ -1,0 +1,13 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle icon-only>
+    	<ion-icon name='menu'></ion-icon>
+    </button>
+		<ion-title>가치가</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-textarea #ionTxtArea placeholder='요청내용' [(ngModel)]="content" height="40"></ion-textarea>
+	<button ion-button block color="secondary" outline (click)="ClickSend()">전송</button>
+</ion-content>

@@ -12,9 +12,19 @@ import { LoginPage } from '../pages/login/login';
 import { ProvisionPage } from '../pages/join/1_provision/provision';
 import { JoinPage } from '../pages/join/2_join/join';
 
-import { MainPage } from '../pages/main/main';
-import { GetIn } from '../pages/main/getin/getin';
-import { PickUp } from '../pages/main/pickup/pickup';
+import { MainSidebar } from '../pages/main_sidebar/main_sidebar';
+
+import { MainTabs } from '../pages/main_sidebar/main_tabs/main_tabs';
+
+import { GetIn } from '../pages/main_sidebar/main_tabs/getin/getin';
+import { PickUp } from '../pages/main_sidebar/main_tabs/pickup/pickup';
+import { Board } from '../pages/main_sidebar/main_tabs/board/board';
+import { Suggestion } from '../pages/main_sidebar/main_tabs/suggestion/suggestion';
+import { CarInfo } from '../pages/main_sidebar/main_tabs/carinfo/carinfo';
+import { UserInfo } from '../pages/main_sidebar/main_tabs/userinfo/userinfo';
+import { Grade } from '../pages/main_sidebar/main_tabs/grade/grade';
+import { GradeRequest } from '../pages/main_sidebar/main_tabs/graderequest/graderequest';
+import { GradeApprove } from '../pages/main_sidebar/main_tabs/gradeapprove/gradeapprove';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,9 +39,19 @@ import { ConnectivityProvider } from '../providers/connectivity/connectivity';
 	JoinPage,
 	ProvisionPage,
 
-	MainPage,
+	MainSidebar,
+
+	MainTabs,
+
 	GetIn,
-	PickUp
+	PickUp,
+	Board,
+	Suggestion,
+	CarInfo,
+	UserInfo,
+	Grade,
+	GradeRequest,
+	GradeApprove
   ],
   imports: [
     BrowserModule,
@@ -46,9 +66,19 @@ import { ConnectivityProvider } from '../providers/connectivity/connectivity';
 	JoinPage,
 	ProvisionPage,
 
-	MainPage,
+	MainSidebar,
+
+	MainTabs,
+
 	GetIn,
-	PickUp
+	PickUp,
+	Board,
+	Suggestion,
+	CarInfo,
+	UserInfo,
+	Grade,
+	GradeRequest,
+	GradeApprove
   ],
   providers: [
     StatusBar,

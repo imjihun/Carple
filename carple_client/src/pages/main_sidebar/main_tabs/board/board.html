@@ -1,0 +1,60 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle icon-only>
+    	<ion-icon name='menu'></ion-icon>
+    </button>
+		<ion-title>가치가</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-list *ngFor="let card of cards">
+		<ion-item>
+			<ion-grid>
+				<ion-row>
+					<ion-col>
+						<h2>{{card.name}}</h2>
+					</ion-col>
+					<ion-col>
+						<p>({{card.id}})</p>
+					</ion-col>
+					<ion-col>
+						<p>{{card.date}}</p>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		</ion-item>
+
+		<ion-item>
+			<h2>{{card.title}}</h2>
+			<p>{{card.content}}</p>
+			<!--<h5>{{card.content}}</h5>-->
+		</ion-item>
+
+		<ion-row>
+			<ion-col>
+				<button ion-button icon-left clear small>
+					<ion-icon name="thumbs-up"></ion-icon>
+					<div>12 Likes</div>
+				</button>
+			</ion-col>
+			<ion-col>
+				<button ion-button icon-left clear small>
+					<ion-icon name="text"></ion-icon>
+					<div>4 Comments</div>
+				</button>
+			</ion-col>
+			<ion-col center text-center>
+				<ion-note>
+					11h ago
+				</ion-note>
+			</ion-col>
+		</ion-row>
+
+	</ion-list>
+
+
+	<ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+		<ion-infinite-scroll-content></ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+</ion-content>

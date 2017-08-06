@@ -1,0 +1,90 @@
+<ion-header>
+	<ion-navbar>
+	<button ion-button menuToggle icon-only>
+    	<ion-icon name='menu'></ion-icon>
+    </button>
+		<ion-title>가치가</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-grid>
+		<ion-row >
+			<ion-item>
+				<ion-label>신뢰마크</ion-label>
+				<!--<ion-thumbnail item-start>
+					<img src="img/thumbnail-totoro.png">
+				</ion-thumbnail>-->
+				<ion-avatar item-end>
+					<img src="img/avatar-cher.png">
+				</ion-avatar>
+			</ion-item>
+		</ion-row>
+		<ion-row justify-content-center>
+			<ion-col col-auto>
+				<ion-item>
+					<ion-label>* 필수</ion-label>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-item>
+				*
+				<ion-input type="text" placeholder="Id" [(ngModel)]="id"></ion-input>
+			</ion-item>
+			<ion-item>
+				*
+				<ion-input type="text" placeholder="이름" [(ngModel)]="name"></ion-input>
+			</ion-item>
+			<ion-item>
+				*
+				<ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+			</ion-item>
+			<ion-item>
+				*
+				<ion-input type="password" placeholder="Password 확인" [(ngModel)]="confirm_password"></ion-input>
+			</ion-item>
+		</ion-row>
+
+
+		<ion-row justify-content-center>
+			<ion-col col-auto>
+				<ion-item>
+					<ion-label>* 선택</ion-label>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-item>
+				<ion-input type="text" placeholder="소속(학과)" [(ngModel)]="attach"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input type="text" placeholder="전화번호" [(ngModel)]="phone"></ion-input>
+			</ion-item>
+		</ion-row>
+
+		<ion-row>
+			<ion-col>
+				<ion-list>
+					<ion-item>
+						<ion-label>성별</ion-label>
+						<ion-select [(ngModel)]="sex">
+							<ion-option value="male">남</ion-option>
+							<ion-option value="female">여</ion-option>
+						</ion-select>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col col-5>
+				<button ion-button block color="danger" outline (click)="ClickCancel()">취소</button>
+			</ion-col>
+			<ion-col col-5>
+				<button ion-button block color="secondary" outline (click)="ClickOk()">확인</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

@@ -1,0 +1,62 @@
+<ion-header>
+	<ion-navbar>
+	<button ion-button menuToggle icon-only>
+    	<ion-icon name='menu'></ion-icon>
+    </button>
+		<ion-title>가치가</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col col-max>
+				<ion-item>
+					<ion-label>탈 곳</ion-label>
+					<ion-select [(ngModel)]="my_getin_info.src">
+						<ion-option *ngFor="let obj of place" [value]="obj.value">{{obj.text}}</ion-option>
+					</ion-select>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col col-max>
+				<ion-item>
+					<div class=table_name>리스트</div>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row align-items-center>
+			<ion-col col-5>
+				<div class=table_title>시간</div>
+			</ion-col>
+			<ion-col col-5>
+				<div class=table_title>목적지</div>
+			</ion-col>
+			<ion-col col-2>
+				<div class=table_title>신청</div>
+			</ion-col>
+		</ion-row>
+		<ion-row *ngFor="let my_pickup_list of my_pickup_lists" align-items-center>
+			<ion-col col-5>
+				<div class=table_data>{{my_pickup_list.time}}</div>
+			</ion-col>
+			<ion-col col-5>
+				<div class=table_data>{{my_pickup_list.dst}}</div>
+			</ion-col>
+			<ion-col col-2>
+				<button ion-button block class=button-pink color="dark" outline (click)=ClickPickupList()>
+					신청
+				</button>
+			</ion-col>
+		</ion-row>
+		<ion-row justify-content-center>
+			<ion-col col-auto>
+				<button ion-button block color="secondary" outline (click)="ClickTableRefresh()">새로고침</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

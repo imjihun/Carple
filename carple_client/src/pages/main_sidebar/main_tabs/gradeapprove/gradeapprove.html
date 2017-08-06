@@ -1,0 +1,38 @@
+<ion-header>
+	<ion-navbar>
+	<button ion-button menuToggle icon-only>
+    	<ion-icon name='menu'></ion-icon>
+    </button>
+		<ion-title>가치가</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col col-max>
+				<ion-item>
+					<div class=table_name>요청목록</div>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row align-items-center>
+			<ion-col col-9>
+				<div class=table_title>ID</div>
+			</ion-col>
+			<ion-col col-3>
+				<div class=table_title>승인</div>
+			</ion-col>
+		</ion-row>
+		<ion-row *ngFor="let grade_approve of grade_approve_list" align-items-center>
+			<ion-col col-9>
+				<div class=table_data>{{grade_approve.id}}</div>
+			</ion-col>
+			<ion-col col-3>
+				<button ion-button block class=button-pink color="dark" outline [disabled]="grade_approve.disabled" (click)="ClickApprove()">
+					승인
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>
